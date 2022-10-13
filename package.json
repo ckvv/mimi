@@ -1,16 +1,18 @@
 {
   "name": "@ckvv/mimi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个命令行工具， 你可以使用它加密、解密本地文件。",
   "main": "./src/index.js",
   "bin": {
-    "mimi": "./src/index.js"
+    "mimi": "src/index.js"
   },
   "scripts": {
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.md --fix --ignore-path .gitignore"
   },
-  "keywords": ["crypto"],
-  "author": "",
+  "keywords": [
+    "crypto"
+  ],
+  "author": "ckvv",
   "license": "ISC",
   "dependencies": {
     "commander": "9.4.1",
@@ -24,9 +26,15 @@
   "files": [
     "src/*"
   ],
-  "repository": "https://github.com/ckvv/mimi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckvv/mimi.git"
+  },
   "homepage": "https://github.com/ckvv/mimi",
   "engines": {
     "node": ">=16"
+  },
+  "bugs": {
+    "url": "https://github.com/ckvv/mimi/issues"
   }
 }

@@ -5,10 +5,10 @@ const { cipherPipe, getCipherKey, parseCipherPath } = require('./utils.js');
 
 function mountEncrypt(program) {
   program.command('encrypt')
-    .description('加密')
+    .description('encrypt files')
     .argument('[<input>:<output>]', '<input dir>:<output dir>')
-    .option('-k, --key <string>', '密钥')
-    .option('-d, --del', '加密后删除原始文件')
+    .option('-k, --key <string>', 'key')
+    .option('-d, --del', 'delete original file after encrypt files')
     .action((str = '', options) => {
       let [input, output] = str.split(':');
       input = input || './';

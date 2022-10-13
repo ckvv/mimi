@@ -5,10 +5,10 @@ const { getCipherKey, parseCipherPath, parseDecipherPath, decipherPipe } = requi
 
 function mountServer(program) {
   program.command('server')
-    .description('解密文件服务')
+    .description('digest files server')
     .argument('[dir]', 'public dir')
-    .option('-k, --key <type>', '加密密钥')
-    .option('-p, --port <number>', '端口号')
+    .option('-k, --key <type>', 'key')
+    .option('-p, --port <number>', 'port number')
     .action((str = './', options) => {
       const { port = 8080, key } = options;
       const cipherKey = getCipherKey(key);

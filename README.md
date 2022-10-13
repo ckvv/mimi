@@ -1,39 +1,54 @@
 # @ckvv/mimi
 
-一个命令行工具， 你可以使用它加密、解密本地文件。
+A command line tool, you can use to encrypt and decrypt local files.
+
+## features
+
+### encrypt files
 
 ```
-Usage: @ckvv/mimi [options] [command]
+Usage: mimi encrypt [options] [<input>:<output>]
 
-一个命令行工具， 你可以使用它加密、解密本地文件。
+encrypt files
+
+Arguments:
+  <input>:<output>    <input dir>:<output dir>
 
 Options:
-  -V, --version                         output the version number
-  -h, --help                            display help for command
-
-Commands:
-  encrypt [options] [<input>:<output>]  加密
-  digest [options] [<input>:<output>]   解密
-  server [options] [dir]                解密文件服务
-  help [command]                        display help for command
+  -k, --key <string>  key
+  -d, --del           delete original file after encrypt files
+  -h, --help          display help for command
 ```
 
-## 功能
-
-### 加密本地文件
+### digest files
 
 ```
-mimi encrypt
+Usage: mimi digest [options] [<input>:<output>]
+
+digest files
+
+Arguments:
+  <input>:<output>    <input dir>:<output dir>
+
+Options:
+  -k, --key <string>  key
+  -d, --del           delete original file after digest files
+  -h, --help          display help for command
 ```
 
-### 解密本地文件
+### digest files server
 
 ```
-mimi digest
-```
+Usage: mimi server [options] [dir]
 
-### 静态文件服务
+digest files server
 
-```
-mimi server
+Arguments:
+  dir                  public dir
+
+Options:
+  -k, --key <type>     key
+  -p, --port <number>  port number
+  -h, --help           display help for command
+chenkai@chenkaideMacBook-Pro mimi %
 ```

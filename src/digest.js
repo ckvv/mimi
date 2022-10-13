@@ -5,10 +5,10 @@ const { decipherPipe, getCipherKey, parseDecipherPath } = require('./utils.js');
 
 function mountDigest(program) {
   program.command('digest')
-    .description('解密')
+    .description('digest files')
     .argument('[<input>:<output>]', '<input dir>:<output dir>')
-    .option('-k, --key <string>', '密钥')
-    .option('-d, --del', '解密后删除原始文件')
+    .option('-k, --key <string>', 'key')
+    .option('-d, --del', 'delete original file after digest files')
     .action((str = '', options) => {
       let [input, output] = str.split(':');
       input = input || './';

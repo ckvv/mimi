@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const { program } = require('commander');
+const config = require('../package.json');
 const { mountEncrypt } = require('./encrypt.js');
 const { mountDigest } = require('./digest.js');
 const { mountServer } = require('./server.js');
-const config = require('../package.json');
 
 program
   .name(config.name)
@@ -19,4 +19,4 @@ program.parse();
 
 process.on('uncaughtException', (e) => {
   console.log(e);
-})
+});

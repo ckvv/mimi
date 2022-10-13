@@ -1,7 +1,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const handler = require('serve-handler');
-const { getCipherKey, parseCipherPath, parseDecipherPath, decipherPipe } = require("./utils.js")
+const { getCipherKey, parseCipherPath, parseDecipherPath, decipherPipe } = require('./utils.js');
 
 function mountServer(program) {
   program.command('server')
@@ -18,9 +18,9 @@ function mountServer(program) {
           public: str,
         }, {
           lstat: (path, ...args) => {
-            if (`${path}`.endsWith('html') || `${path}`.endsWith('/')) {
+            if (`${path}`.endsWith('html') || `${path}`.endsWith('/'))
               return fs.lstatSync(path);
-            }
+
             const pathInfo = parseCipherPath(path, cipherKey);
             return fs.lstatSync(`${pathInfo.dir}/${pathInfo._base}`, ...args);
           },
@@ -47,6 +47,6 @@ function mountServer(program) {
 }
 
 module.exports = {
-  mountServer
+  mountServer,
 };
 

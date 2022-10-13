@@ -1,0 +1,22 @@
+{
+  "name": "@ckvv/mimi",
+  "version": "0.0.1",
+  "description": "一个命令行工具， 你可以使用它加密、解密本地文件。",
+  "main": "./src/index.js",
+  "bin": {
+    "mimi": "./src/index.js"
+  },
+  "scripts": {
+    "lint": "",
+    "prepare": ""
+  },
+  "keywords": ["crypto"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "9.4.1",
+    "serve-handler": "6.1.3",
+    "glob": "8.0.3"
+  },
+  "devDependencies": {}
+}

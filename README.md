@@ -2,11 +2,32 @@
 
 A command line tool, you can use to encrypt and decrypt local files.
 
-## features
+## Example
+
+```sh
+# encrypt current directory files
+mimi encrypt
+# encrypt current directory files and delete original files
+mimi encrypt -d
+# encrypt the current directory file with the key test and delete the original file
+mimi encrypt -d -k test
+
+# digest current directory files
+mimi digest
+# digest current directory files and delete original files
+mimi digest -d
+# digest the current directory file with the key test and delete the original file
+mimi digest -d -k test
+
+mimi server
+mimi server -k test -p 9999
+```
+
+## Features
 
 ### encrypt files
 
-```
+```sh
 Usage: mimi encrypt [options] [<input>:<output>]
 
 encrypt files
@@ -22,7 +43,7 @@ Options:
 
 ### digest files
 
-```
+```sh
 Usage: mimi digest [options] [<input>:<output>]
 
 digest files
@@ -38,7 +59,7 @@ Options:
 
 ### digest files server
 
-```
+```sh
 Usage: mimi server [options] [dir]
 
 digest files server

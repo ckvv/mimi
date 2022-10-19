@@ -1,6 +1,6 @@
 {
   "name": "@ckvv/mimi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一个命令行工具， 你可以使用它加密、解密本地文件。",
   "main": "./src/index.js",
   "bin": {

@@ -51,11 +51,12 @@ function mountServer(program) {
             </html>`);
           });
         } else {
+          const url = decodeURI(req.url || '');
           res.statusCode = 200;
-          res.setHeader('Content-Type', `${mime.lookup(`${req.url}`)}`);
+          res.setHeader('Content-Type', `${mime.lookup(url)}; charset=utf-8`);
           res.setHeader('Content-Disposition', 'inline');
 
-          const filePath = path.join(rootPath, `${req.url}`);
+          const filePath = path.join(rootPath, url);
           const pathInfo = parseCipherPath(filePath, cipherKey);
           const newPath = `${pathInfo.dir}/${pathInfo._base}`;
 

@@ -1,7 +1,7 @@
 {
   "name": "@ckvv/mimi",
-  "version": "0.0.3",
-  "description": "一个命令行工具， 你可以使用它加密、解密本地文件。",
+  "version": "0.0.4",
+  "description": "A command line tool that you can use to encrypt and decrypt local files.",
   "main": "./src/index.js",
   "bin": {
     "mimi": "src/index.js"
@@ -16,7 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "9.4.1",
-    "glob": "8.0.3"
+    "glob": "8.0.3",
+    "mime-types": "2.1.35"
   },
   "devDependencies": {
     "eslint": "8.25.0",

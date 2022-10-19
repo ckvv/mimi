@@ -1,7 +1,11 @@
 const http = require('node:http');
 const fs = require('node:fs');
+const path = require('node:path');
 const glob = require('glob');
+const mime = require('mime-types');
 const { getCipherKey, decipherPipe, parseCipherPath, parseDecipherPath } = require('./utils.js');
+
+const rootPath = process.cwd();
 
 function mountServer(program) {
   program.command('server')
@@ -48,7 +52,11 @@ function mountServer(program) {
           });
         } else {
           res.statusCode = 200;
-          const pathInfo = parseCipherPath(req.url, cipherKey);
+          res.setHeader('Content-Type', `${mime.lookup(`${req.url}`)}`);
+          res.setHeader('Content-Disposition', 'inline');
+
+          const filePath = path.join(rootPath, `${req.url}`);
+          const pathInfo = parseCipherPath(filePath, cipherKey);
           const newPath = `${pathInfo.dir}/${pathInfo._base}`;
 
           const readStream = fs.createReadStream(`${newPath}`);
@@ -56,8 +64,8 @@ function mountServer(program) {
             decipherPipe(readStream, cipherKey).pipe(res);
           });
           readStream.on('error', () => {
-            console.log('File encrypt key error:', req.url);
-            fs.createReadStream(`${req.url}`).pipe(res);
+            console.log('File encrypt key error:', filePath);
+            fs.createReadStream(`${filePath}`).pipe(res);
           });
         }
       });

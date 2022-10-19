@@ -1,6 +1,6 @@
 {
   "name": "@ckvv/mimi",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A command line tool that you can use to encrypt and decrypt local files.",
   "main": "./src/index.js",
   "bin": {

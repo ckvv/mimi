@@ -1,10 +1,10 @@
 {
   "name": "@ckvv/mimi",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A command line tool that you can use to encrypt and decrypt local files.",
-  "main": "./src/index.js",
+  "main": "./bin/index.js",
   "bin": {
-    "mimi": "src/index.js"
+    "mimi": "./bin/index.js"
   },
   "scripts": {
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.md --fix --ignore-path .gitignore"
@@ -24,6 +24,7 @@
     "@antfu/eslint-config": "0.27.0"
   },
   "files": [
+    "bin/*",
     "src/*"
   ],
   "repository": {

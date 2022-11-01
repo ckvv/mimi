@@ -24,6 +24,5 @@ program.parse();
 
 process.on('uncaughtException', (e) => {
   console.log(e);
-  process.exit(1);
 });
 
